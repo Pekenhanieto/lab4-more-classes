@@ -2,7 +2,7 @@
  * Course: COEN 2220 - Programming 2
  * Name: Julian A. Pagan Hernandez
  * Lab: Lab 4 - Object-Oriented Programming, Part 2
- * Description: Aggregation practice with CourseSection
+ * Description: Guided example - static members, copies, and operators
  * Due date: 09/12/2026
  */
 
@@ -61,6 +61,28 @@ int main() {
 
     cout << "Total: " << total.getMinutes() << " minutes" << endl;
     cout << "Objects created: " << StudyTime::getObjectCount() << endl;
+
+    cout << "\n" << endl;
+
+    StudyTime reading2(60);
+    // StudyTime reading2(60);
+
+    StudyTime practice2(30);
+    StudyTime total2 = reading2 + practice2;
+
+    cout << "Total 2: " << total2.getMinutes() << " minutes" << endl;
+    cout << "Reading 2: " << reading2.getMinutes() << " minutes" << endl;
+    cout << "Objects created: " << StudyTime::getObjectCount() << endl;
+
+    cout << "\n" << endl;
+
+    StudyTime readingCopy2 = reading;
+    StudyTime defaultTime;
+    defaultTime = reading;
+
+    cout << "Final objects created: " << StudyTime::getObjectCount() << endl;
+    cout << "Reading copy 2: " << readingCopy2.getMinutes() << " minutes" << endl;
+    cout << "Default time after assignment: " << defaultTime.getMinutes() << " minutes" << endl;
 
     return 0;
 }
